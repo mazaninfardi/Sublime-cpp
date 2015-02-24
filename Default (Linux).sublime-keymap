@@ -1,0 +1,11 @@
+[
+    {"keys": ["ctrl+shift+l"], "command": "toggle_setting", "args": {"setting": "word_wrap"}},
+    {"keys": ["ctrl+u"], "command": "upper_case"},
+    {"keys": ["super+shift+c"], "command": "error_cleanup"},
+    // kill the build process
+    {"keys": ["ctrl+shift+c"], "command": "exec", "args" : {"kill" : true}},
+    // fold section
+    {"keys": ["ctrl+'"],  "command": "fold", "args": {"panel": "output.exec"}},
+    // unfold section
+    {"keys": ["ctrl+shift+'"],  "command": "unfold", "args": {}}
+]

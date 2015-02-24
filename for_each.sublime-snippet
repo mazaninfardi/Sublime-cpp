@@ -1,0 +1,14 @@
+<snippet>
+    <content><![CDATA[
+for (auto&& ${1:e} : $2)
+{
+
+}
+]]></content>
+    <!-- Optional: Tab trigger to activate the snippet -->
+    <tabTrigger>for_each</tabTrigger>
+    <!-- Optional: Scope the tab trigger will be active in -->
+    <scope>source.c++</scope>
+    <!-- Optional: Description to show in the menu -->
+    <description>For loop iterating elements</description>
+</snippet>

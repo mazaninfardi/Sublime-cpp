@@ -1,0 +1,13 @@
+<snippet>
+    <content><![CDATA[
+namespace $1 {
+
+} // namespace $1
+      ]]></content>
+    <!-- Optional: Tab trigger to activate the snippet -->
+    <tabTrigger>namespace</tabTrigger>
+    <!-- Optional: Scope the tab trigger will be active in -->
+    <scope>source.c++</scope>
+    <!-- Optional: Description to show in the menu -->
+    <description>Create a namespace</description>
+</snippet>

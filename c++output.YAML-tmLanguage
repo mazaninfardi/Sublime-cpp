@@ -1,0 +1,92 @@
+# [PackageDev] target_format: plist, ext: tmLanguage
+---
+name: C++ Error Output
+scopeName: source.boo
+fileTypes: [boo]
+uuid: 45319b4d-90f8-4ff1-9a66-c56ed5c408a4
+
+patterns:
+- include: '#pars'
+- include: '#bracs'
+- include: '#anglebracs'
+- include: '#quotes'
+- include: '#curlies'
+- match: \b((e|E)rror)\b
+  name: invalid.illegal
+- match: (warning|instantiation|note|required|candidate)
+  name: markup.quote
+- match: ^[^\:\s]*(?=:)
+  name: support.variable
+- match: (?<=:)[0-9]+
+  name: keyword.control
+
+repository:
+  bracs:
+    name: markup.quote
+    begin: \[
+    beginCaptures:
+      '0': {name: keyword}
+    end: \]
+    endCaptures:
+      '0': {name: keyword}
+    patterns:
+    - include: $self
+    - include: anglebracs
+    - include: pars
+      # match: .
+      # name: source
+  pars:
+    name: variable.parameter
+    begin: \(
+    beginCaptures:
+      '0': {name: keyword}
+    end: (\)|$)
+    endCaptures:
+      '0': {name: keyword}
+    patterns:
+    - include: $self
+    - include: anglebracs
+    #   match: .
+    #   name: storage.type
+
+  anglebracs:
+    name: markup.raw
+    begin: (?<!<)\<(?!\<)
+    beginCaptures:
+      '0': {name: keyword}
+    end: \>
+    endCaptures:
+      '0': {name: keyword}
+    patterns:
+    - include: $self
+    - include: pars
+    #   match: .
+    #   name: storage.type
+  quotes:
+    name: markup.bold
+    begin: ‘
+    beginCaptures:
+      '0': {name: keyword}
+    end: ’
+    endCaptures:
+      '0': {name: keyword}
+    patterns:
+    - include: $self
+    - include: anglebracs
+    - include: pars
+    - include: bracs
+
+  curlies:
+    name: markup.list
+    begin: \{
+    beginCaptures:
+      '0': {name: keyword}
+    end: \}
+    endCaptures:
+      '0': {name: keyword}
+    patterns:
+    - include: $self
+    - include: anglebracs
+    - include: pars
+    - include: bracs
+...

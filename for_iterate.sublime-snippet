@@ -1,0 +1,16 @@
+<snippet>
+    <content><![CDATA[
+auto&& it_end = $2.end();
+
+for (auto&& it = $2.begin(); it != it_end; ++it)
+{
+
+}
+]]></content>
+    <!-- Optional: Tab trigger to activate the snippet -->
+    <tabTrigger>foriterate</tabTrigger>
+    <!-- Optional: Scope the tab trigger will be active in -->
+    <scope>source.c++</scope>
+    <!-- Optional: Description to show in the menu -->
+    <description>For loop iterating over V</description>
+</snippet>
